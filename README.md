@@ -27,7 +27,7 @@ cd repo-roast
 
 # 配置 Key
 cp .env.local.example .env.local
-# 用编辑器打开 .env.local，按下面格式填入：
+# 用记事本打开 .env.local（右键 → 打开方式 → 记事本），按下面格式填入：
 # GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
 # DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
 
