@@ -7,48 +7,156 @@
 
 ---
 
-## 使用说明
+## 从零开始教程
 
-### 1. 获取 API Key
+> 即使你是刚买电脑的新手，跟着下面步骤一步步走，也能成功运行。
 
-需要两个 Key，都是免费的：
+---
 
-| Key | 获取地址 | 说明 |
-|-----|----------|------|
-| GitHub Token | https://github.com/settings/tokens | 点 "Generate new token (classic)"，勾选 `public_repo`，生成后复制 |
-| DeepSeek API Key | https://platform.deepseek.com/api_keys | 注册后点 "创建 API Key"，复制（新用户有免费额度） |
+### 第 0 步：安装 Node.js
 
-### 2. 安装启动
+这是运行本项目必需的运行环境。
 
-```bash
-# 克隆仓库
+1. 打开 https://nodejs.org
+2. 点击左边绿色的 **LTS** 按钮，下载安装包（`.msi` 文件）
+3. 双击下载的文件，一路点 **Next**，全部保持默认选项，最后点 **Install**
+4. 安装完成后，打开 **命令提示符**（按 `Win + R`，输入 `cmd`，回车）
+
+```cmd
+node --version
+```
+
+如果显示 `v22.x.x` 之类的版本号，说明安装成功。
+
+---
+
+### 第 1 步：获取 API Key
+
+项目需要两个免费 Key，分别用于读取 GitHub 数据和调用 AI。
+
+#### 1.1 GitHub Token
+
+1. 浏览器打开 https://github.com/settings/tokens
+2. 点 **Generate new token** → **Generate new token (classic)**
+3. **Note** 随便填，比如 `repo-roast`
+4. **Expiration** 选 `No expiration`
+5. 勾选 `public_repo`（只勾这一个就够了）
+6. 拉到页面底部，点绿色的 **Generate token**
+7. 页面会显示一串 `ghp_` 开头的字符，**立刻复制保存**（关掉页面就看不到了）
+
+#### 1.2 DeepSeek API Key
+
+1. 浏览器打开 https://platform.deepseek.com/api_keys
+2. 注册账号（手机号或邮箱），登录
+3. 点 **创建 API Key**，随便起个名字
+4. 复制显示的 `sk-` 开头的 Key（新用户有免费额度，够用很久）
+
+---
+
+### 第 2 步：下载项目
+
+**方法 A：用 Git 克隆（推荐）**
+
+如果你已经装了 Git，打开命令提示符：
+
+```cmd
 git clone https://github.com/ppppddddllll/repo-roast.git
-cd repo-roast
+```
 
-# 配置 Key
-cp .env.local.example .env.local
-# 用记事本打开 .env.local（右键 → 打开方式 → 记事本），按下面格式填入：
-# GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
-# DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
+然后跳到第 3 步。
 
-# 安装依赖
+**方法 B：直接下载 ZIP（没装 Git 也能用）**
+
+1. 浏览器打开 https://github.com/ppppddddllll/repo-roast
+2. 点绿色的 **Code** 按钮 → **Download ZIP**
+3. 下载完成后解压：
+   - 右键 `repo-roast-main.zip` → **全部解压缩**
+   - 解压到桌面或你记得住的地方
+4. 重命名文件夹：`repo-roast-main` → `repo-roast`
+
+---
+
+### 第 3 步：配置 API Key
+
+1. 打开项目文件夹（如果下载的 ZIP，进 `repo-roast` 文件夹）
+2. 找到 `.env.local.example` 文件
+3. 复制一份并重命名为 `.env.local`：
+   - 右键 `.env.local.example` → **复制**
+   - 在空白处右键 → **粘贴**
+   - 右键新文件 → **重命名**，改成 `.env.local`
+4. 右键 `.env.local` → **打开方式** → **记事本**
+5. 把里面的内容改成你第 1 步获取的 Key：
+
+```
+GITHUB_TOKEN=ghp_你的GitHub Token
+DEEPSEEK_API_KEY=sk-你的DeepSeek Key
+```
+
+6. 按 `Ctrl + S` 保存，关掉记事本
+
+---
+
+### 第 4 步：安装依赖
+
+打开命令提示符，进入项目文件夹：
+
+```cmd
+cd C:\Users\你的用户名\Desktop\repo-roast
+```
+
+（如果你解压到了桌面；如果放在别处，把路径换成对应的）
+
+然后运行：
+
+```cmd
 npm install
+```
 
-# 启动
+等待 1-2 分钟，屏幕滚动结束后看到光标重新出现，说明安装完成。
+
+---
+
+### 第 5 步：启动
+
+```cmd
 npm run dev
 ```
 
-浏览器打开 `http://localhost:3000`
+看到以下输出说明启动成功：
 
-### 3. 使用
+```
+▲ Next.js 16.x.x
+- Local:         http://localhost:3000
+✓ Ready
+```
 
-1. 粘贴任意 GitHub 仓库链接，例如 `https://github.com/facebook/react`
-2. 选择模式：
-   - **毒舌模式** — 幽默犀利点评
-   - **投资人模式** — VC 视角 YES/NO
-   - **面试官模式** — 录取概率评估
-3. 点击 **Roast!**
-4. 10 秒内得到分析结果
+---
+
+### 第 6 步：使用
+
+1. 浏览器打开 `http://localhost:3000`
+2. 粘贴任意 GitHub 仓库链接，比如：
+   - `https://github.com/facebook/react`
+   - `https://github.com/torvalds/linux`
+   - 或者你自己的仓库
+3. 选择一个模式：
+   - **🔥 毒舌模式** — 幽默犀利点评你的项目
+   - **💰 投资人模式** — 假装 VC 判断值不值得投
+   - **🎓 面试官模式** — 如果是你写的，录取概率多大
+4. 点 **Roast!** 按钮
+5. 等 10 秒，查看 AI 给你的毒舌评审报告
+
+---
+
+### 常见问题
+
+| 问题 | 解决方法 |
+|------|----------|
+| `node` 不是内部命令 | Node.js 没装好，回到第 0 步重装 |
+| `npm install` 报错 | 检查网络连接，或换国内镜像：`npm config set registry https://registry.npmmirror.com` |
+| 页面打开但是分析报错 | 检查 `.env.local` 里的 Key 是否填对了，不能有空格 |
+| `GitHub API rate limit exceeded` | 没填 GitHub Token，或者填的是错的 |
+| `DeepSeek API error` | DeepSeek Key 填错了，或者免费额度用完了 |
 
 ---
 
