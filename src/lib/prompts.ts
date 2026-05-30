@@ -208,7 +208,7 @@ function parseInvestorResponse(text: string): {
   const suggestions = reasonsText
     .split(/\n/)
     .map((line) => line.replace(/^[\d]+[\.\、\)]\s*/, "").replace(/^[-*•]\s*/, "").trim())
-    .filter((s) => s.length > 5);
+    .filter((s) => s.length > 2);
 
   return { roast: text.trim(), suggestions, verdict };
 }

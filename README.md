@@ -4,6 +4,9 @@
 
 <a href="https://github.com/ppppddddllll/repo-roast"><img alt="GitHub" src="https://img.shields.io/badge/GitHub-repo--roast-black?logo=github"></a>
 <a href="https://github.com/ppppddddllll/repo-roast/blob/main/LICENSE"><img alt="License" src="https://img.shields.io/github/license/ppppddddllll/repo-roast"></a>
+<a href="https://github.com/ppppddddllll/repo-roast/actions"><img alt="CI" src="https://github.com/ppppddddllll/repo-roast/actions/workflows/ci.yml/badge.svg"></a>
+<img alt="Code Quality" src="https://img.shields.io/badge/code%20quality-unknown-lightgrey">
+<img alt="made with" src="https://img.shields.io/badge/made%20with-%F0%9F%94%A5%20roast-red">
 
 ---
 
