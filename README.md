@@ -10,9 +10,29 @@
 
 ---
 
-## 从零开始教程
+## Docker 运行（推荐，无需装 Node.js）
+
+```bash
+# 1. 下载项目
+git clone https://github.com/ppppddddllll/repo-roast.git
+cd repo-roast
+
+# 2. 编辑 .env.local，填入你的 Key
+#    用记事本打开，改成：
+#    GITHUB_TOKEN=你的Token
+#    DEEPSEEK_API_KEY=你的Key
+
+# 3. 一行命令启动
+docker compose up --build
+
+# 4. 浏览器打开 http://localhost:3000
+```
+
+没装 Docker？去 https://www.docker.com/products/docker-desktop 下载一个，安装后什么都不用配。
 
 ---
+
+## 手动安装（需要 Node.js）
 
 ### 第 0 步：安装 Node.js
 
