@@ -27,7 +27,9 @@ cd repo-roast
 
 # 配置 Key
 cp .env.local.example .env.local
-# 用编辑器打开 .env.local，填入上面获取的两个 Key
+# 用编辑器打开 .env.local，按下面格式填入：
+# GITHUB_TOKEN=ghp_xxxxxxxxxxxxxxxxxxxx
+# DEEPSEEK_API_KEY=sk-xxxxxxxxxxxxxxxxxxxx
 
 # 安装依赖
 npm install
