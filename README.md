@@ -9,13 +9,11 @@
 
 ## 从零开始教程
 
-> 即使你是刚买电脑的新手，跟着下面步骤一步步走，也能成功运行。
-
 ---
 
 ### 第 0 步：安装 Node.js
 
-这是运行本项目必需的运行环境。
+这是运行本项目必需的环境。
 
 1. 打开 https://nodejs.org
 2. 点击左边绿色的 **LTS** 按钮，下载安装包（`.msi` 文件）
@@ -47,9 +45,8 @@ node --version
 #### 1.2 DeepSeek API Key
 
 1. 浏览器打开 https://platform.deepseek.com/api_keys
-2. 注册账号（手机号或邮箱），登录
-3. 点 **创建 API Key**，随便起个名字
-4. 复制显示的 `sk-` 开头的 Key（新用户有免费额度，够用很久）
+2. 点 **创建 API Key**，随便起个名字
+3. 复制显示的 `sk-` 开头的 Key
 
 ---
 
@@ -79,20 +76,16 @@ git clone https://github.com/ppppddddllll/repo-roast.git
 ### 第 3 步：配置 API Key
 
 1. 打开项目文件夹（如果下载的 ZIP，进 `repo-roast` 文件夹）
-2. 找到 `.env.local.example` 文件
-3. 复制一份并重命名为 `.env.local`：
-   - 右键 `.env.local.example` → **复制**
-   - 在空白处右键 → **粘贴**
-   - 右键新文件 → **重命名**，改成 `.env.local`
-4. 右键 `.env.local` → **打开方式** → **记事本**
-5. 把里面的内容改成你第 1 步获取的 Key：
+2. 找到 `.env.local` 文件
+3. 右键 `.env.local` → **打开方式** → **记事本**
+4. 把里面的内容改成你第 1 步获取的 Key：
 
 ```
 GITHUB_TOKEN=ghp_你的GitHub Token
 DEEPSEEK_API_KEY=sk-你的DeepSeek Key
 ```
 
-6. 按 `Ctrl + S` 保存，关掉记事本
+5. 按 `Ctrl + S` 保存，关掉记事本
 
 ---
 
@@ -156,7 +149,6 @@ npm run dev
 | `npm install` 报错 | 检查网络连接，或换国内镜像：`npm config set registry https://registry.npmmirror.com` |
 | 页面打开但是分析报错 | 检查 `.env.local` 里的 Key 是否填对了，不能有空格 |
 | `GitHub API rate limit exceeded` | 没填 GitHub Token，或者填的是错的 |
-| `DeepSeek API error` | DeepSeek Key 填错了，或者免费额度用完了 |
 
 ---
 
